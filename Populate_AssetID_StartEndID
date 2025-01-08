@@ -1,0 +1,69 @@
+import arcpy
+from colorama import init, Fore, Style
+
+# Initialize colorama for color output
+init(autoreset=True)
+
+def select_feature_class(message):
+    feature_classes = arcpy.ListFeatureClasses()
+    print(Fore.CYAN + f"\nAvailable Feature Classes for {message}:")
+    for idx, fc in enumerate(feature_classes, 1):
+        # Number in Yellow, Feature Class name in Green
+        print(Fore.YELLOW + f"{idx}. " + Fore.GREEN + f"{fc}")
+    selected_index = int(input(Fore.CYAN + f"Select a feature class for {message} by number: ")) - 1
+    return feature_classes[selected_index]
+
+def select_field(feature_class, message):
+    fields = arcpy.ListFields(feature_class)
+    print(Fore.CYAN + f"\nAvailable Fields in {feature_class} for {message}:")
+    for idx, field in enumerate(fields, 1):
+        # Number in Yellow, Field name in Green, Type in Red
+        print(Fore.YELLOW + f"{idx}. " + Fore.GREEN + f"{field.name}" + Fore.RED + f" (Type: {field.type})")
+    selected_index = int(input(Fore.CYAN + f"Select a field for {message} by number: ")) - 1
+    return fields[selected_index].name
+
+# Prompt the user for the geodatabase path
+geodatabase = input(Fore.CYAN + "Enter the path to your geodatabase: ")
+
+# Set workspace to the provided geodatabase
+arcpy.env.workspace = geodatabase
+arcpy.env.overwriteOutput = True
+
+# Select the feature class where we want to populate the field based on Start and End IDs
+fc = select_feature_class("Feature Class to update")
+
+# Select the StartID and EndID fields
+start_field = select_field(fc, "StartID")
+end_field = select_field(fc, "EndID")
+
+# Select the target field that will be populated based on StartID and EndID
+target_field = select_field(fc, "Target Field to Populate (e.g., CombinedID)")
+
+print(Fore.BLUE + f"\nUpdating {target_field} using {start_field} and {end_field}...")
+
+# Start an update cursor to populate the target field
+with arcpy.da.UpdateCursor(fc, [start_field, end_field, target_field]) as cursor:
+    for row in cursor:
+        start_val = row[0]
+        end_val = row[1]
+
+        # If either start or end is None, handle accordingly
+        if start_val is None or end_val is None:
+            print(Fore.MAGENTA + "Skipping a record because StartID or EndID is null.")
+            continue
+
+        # Combine or compute the new value. We'll just concatenate here.
+        new_val = f"{start_val}-{end_val}"
+        row[2] = new_val
+
+        # Print the updated result in color
+        print(
+            Fore.YELLOW + "StartID: " + Fore.BLUE + str(start_val) +
+            Fore.GREEN + " , EndID: " + Fore.MAGENTA + str(end_val) +
+            Fore.CYAN + f" => {target_field}: " + Fore.YELLOW + str(new_val)
+        )
+
+        # Update the row
+        cursor.updateRow(row)
+
+print(Fore.CYAN + "Field population complete!")
