@@ -1,0 +1,148 @@
+Schema for Sewer_Lines
+------------------------------
+Field Name: OBJECTID
+Field Type: OID
+Field Alias: OBJECTID
+------------------------------
+Field Name: SHAPE
+Field Type: Geometry
+Field Alias: SHAPE
+------------------------------
+Field Name: sid
+Field Type: Integer
+Field Alias: sid
+------------------------------
+Field Name: fnode_
+Field Type: Double
+Field Alias: fnode_
+------------------------------
+Field Name: tnode_
+Field Type: Double
+Field Alias: tnode_
+------------------------------
+Field Name: lpoly_
+Field Type: Double
+Field Alias: lpoly_
+------------------------------
+Field Name: rpoly_
+Field Type: Double
+Field Alias: rpoly_
+------------------------------
+Field Name: length
+Field Type: Double
+Field Alias: length
+------------------------------
+Field Name: sewlines_
+Field Type: Double
+Field Alias: sewlines_
+------------------------------
+Field Name: sewlines_i
+Field Type: Double
+Field Alias: sewlines_i
+------------------------------
+Field Name: material
+Field Type: String
+Field Alias: material
+Length: 80
+------------------------------
+Field Name: diameter
+Field Type: Double
+Field Alias: diameter
+------------------------------
+Field Name: type
+Field Type: String
+Field Alias: type
+Length: 80
+------------------------------
+Field Name: rec_length
+Field Type: Double
+Field Alias: rec_length
+------------------------------
+Field Name: slope
+Field Type: Double
+Field Alias: slope
+------------------------------
+Field Name: ups_elev
+Field Type: Double
+Field Alias: ups_elev
+------------------------------
+Field Name: dwn_elev
+Field Type: Double
+Field Alias: dwn_elev
+------------------------------
+Field Name: notes
+Field Type: String
+Field Alias: notes
+Length: 80
+------------------------------
+Field Name: source_id
+Field Type: String
+Field Alias: source_id
+Length: 80
+------------------------------
+Field Name: feature_id
+Field Type: Integer
+Field Alias: feature_id
+------------------------------
+Field Name: facility_i
+Field Type: String
+Field Alias: facility_i
+Length: 80
+------------------------------
+Field Name: pw_id
+Field Type: String
+Field Alias: pw_id
+Length: 80
+------------------------------
+Field Name: pwfnode
+Field Type: String
+Field Alias: pwfnode
+Length: 80
+------------------------------
+Field Name: pwtnode
+Field Type: String
+Field Alias: pwtnode
+Length: 80
+------------------------------
+Field Name: pwtype
+Field Type: String
+Field Alias: pwtype
+Length: 80
+------------------------------
+Field Name: pwfsid
+Field Type: Integer
+Field Alias: pwfsid
+------------------------------
+Field Name: pwtsid
+Field Type: Integer
+Field Alias: pwtsid
+------------------------------
+Field Name: pwfuid
+Field Type: String
+Field Alias: pwfuid
+Length: 80
+------------------------------
+Field Name: pwtuid
+Field Type: String
+Field Alias: pwtuid
+Length: 80
+------------------------------
+Field Name: AssetID
+Field Type: String
+Field Alias: AssetID
+Length: 50
+------------------------------
+Field Name: StartID
+Field Type: String
+Field Alias: StartID
+Length: 50
+------------------------------
+Field Name: EndID
+Field Type: String
+Field Alias: EndID
+Length: 50
+------------------------------
+Field Name: SHAPE_Length
+Field Type: Double
+Field Alias: SHAPE_Length
+------------------------------

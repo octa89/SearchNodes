@@ -1,0 +1,98 @@
+Schema for StormPipes
+------------------------------
+Field Name: OBJECTID_1
+Field Type: OID
+Field Alias: FID
+------------------------------
+Field Name: Shape
+Field Type: Geometry
+Field Alias: Shape
+------------------------------
+Field Name: OBJECTID
+Field Type: Integer
+Field Alias: OBJECTID
+------------------------------
+Field Name: P_assetid
+Field Type: String
+Field Alias: P_assetid
+Length: 254
+------------------------------
+Field Name: P_assettyp
+Field Type: Integer
+Field Alias: P_assettyp
+------------------------------
+Field Name: P_diameter
+Field Type: Double
+Field Alias: P_diameter
+------------------------------
+Field Name: P_upelev
+Field Type: Double
+Field Alias: P_upelev
+------------------------------
+Field Name: P_downelev
+Field Type: Double
+Field Alias: P_downelev
+------------------------------
+Field Name: P_pipeshap
+Field Type: Integer
+Field Alias: P_pipeshap
+------------------------------
+Field Name: P_lifecycl
+Field Type: Integer
+Field Alias: P_lifecycl
+------------------------------
+Field Name: P_Verified
+Field Type: Integer
+Field Alias: P_Verified
+------------------------------
+Field Name: P_pipeleng
+Field Type: Double
+Field Alias: P_pipeleng
+------------------------------
+Field Name: P_Dimensio
+Field Type: String
+Field Alias: P_Dimensio
+Length: 254
+------------------------------
+Field Name: CreationDa
+Field Type: Date
+Field Alias: CreationDa
+------------------------------
+Field Name: Creator
+Field Type: String
+Field Alias: Creator
+Length: 128
+------------------------------
+Field Name: EditDate
+Field Type: Date
+Field Alias: EditDate
+------------------------------
+Field Name: Editor
+Field Type: String
+Field Alias: Editor
+Length: 128
+------------------------------
+Field Name: SHAPE_Leng
+Field Type: Double
+Field Alias: SHAPE_Leng
+------------------------------
+Field Name: USX
+Field Type: Double
+Field Alias: USX
+------------------------------
+Field Name: USY
+Field Type: Double
+Field Alias: USY
+------------------------------
+Field Name: DSX
+Field Type: Double
+Field Alias: DSX
+------------------------------
+Field Name: DSY
+Field Type: Double
+Field Alias: DSY
+------------------------------
+Field Name: Shape_Length
+Field Type: Double
+Field Alias: Shape_Length
+------------------------------
