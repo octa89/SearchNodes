@@ -26,7 +26,7 @@ Clone the repository:
 
 bash
 Copy
-git clone https://github.com/yourusername/arcgis-pipe-manhole-matcher.git
+git clone (https://github.com/octa89/SearchNodes/edit/main/README.md)
 cd arcgis-pipe-manhole-matcher
 Ensure your ArcGIS environment is set up (so that ArcPy is available).
 
