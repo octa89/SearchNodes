@@ -53,6 +53,7 @@ fields_and_geometries = {
 
 # Additional fields to ensure exist
 additional_fields = {
+    "AssetID": "TEXT",
     "StartID": "TEXT",
     "EndID": "TEXT"
 }
